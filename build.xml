@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="bank" default="all">
+	<property name="pg.database">bank</property>
+	<property name="pg.driver">org.postgresql.Driver</property>
+	<property name="pg.url">jdbc:postgresql://localhost/</property>
+	<property name="pg.classpath">postgresql.jar</property>
+	<property name="pg.userid">postgres</property>
+	<property name="pg.password">password</property>
+	<property name="pg.name">bank</property>
+	<target name="create">
+		<sql classpath="${pg.classpath}"
+			driver="${pg.driver}"
+			url="${pg.url}"
+			userid="${pg.userid}"
+			password="${pg.password}"
+			autocommit="True">
+			CREATE DATABASE ${pg.name} WITH ENCODING 'UTF-8';
+		</sql> 
+		<sql classpath="${pg.classpath}"
+			driver="${pg.driver}"
+			url="${pg.url}${pg.name}"
+			userid="${pg.userid}"
+			password="${pg.password}"
+			autocommit="True"
+			src="create.sql">
+		</sql>
+	</target>
+	<target name="populate">
+		<sql classpath="${pg.classpath}"
+		 	driver="${pg.driver}"
+		 	userid="${pg.userid}"
+		 	password="${pg.password}"
+			autocommit="True"
+			url="${pg.url}${pg.name}"
+			src="populate.sql">
+		</sql>
+	</target>
+	<target name="all" depends="create, populate"/>
+	<target name="clean">
+		<sql classpath="${pg.classpath}"
+			driver="${pg.driver}"
+			url="${pg.url}"
+			userid="${pg.userid}"
+			password="${pg.password}"
+			autocommit="True">
+			DROP DATABASE ${pg.name};
+		</sql> 
+	</target>
+</project>
