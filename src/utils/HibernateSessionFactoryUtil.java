@@ -14,6 +14,10 @@ public class HibernateSessionFactoryUtil {
             try {
                 Configuration configuration = new Configuration().configure();
                 configuration.addAnnotatedClass(Account.class);
+                configuration.addAnnotatedClass(Type.class);
+                configuration.addAnnotatedClass(Client.class);
+                configuration.addAnnotatedClass(Department.class);
+                configuration.addAnnotatedClass(Transaction.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (Exception e) {
