@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="sql" default="all" basedir="../">
+    <property file="build.properties"/>
+	<target name="create">
+		<sql classpath="${db.classpath}"
+			driver="${db.driver}"
+			url="${db.url}"
+			userid="${db.userid}"
+			password="${db.password}"
+			autocommit="True">
+			CREATE DATABASE ${db.name} WITH ENCODING 'UTF-8';
+		</sql> 
+		<sql classpath="${db.classpath}"
+			driver="${db.driver}"
+			url="${db.url}${db.name}"
+			userid="${db.userid}"
+			password="${db.password}"
+			autocommit="True"
+			src="${sql.dir}/create.sql">
+		</sql>
+	</target>
+	<target name="populate">
+		<sql classpath="${db.classpath}"
+		 	driver="${db.driver}"
+		 	userid="${db.userid}"
+		 	password="${db.password}"
+			autocommit="True"
+			url="${db.url}${db.name}"
+			src="${sql.dir}/populate.sql">
+		</sql>
+	</target>
+	<target name="all" depends="create, populate"/>
+	<target name="clean">
+		<sql classpath="${db.classpath}"
+			driver="${db.driver}"
+			url="${db.url}"
+			userid="${db.userid}"
+			password="${db.password}"
+			autocommit="True">
+			DROP DATABASE ${db.name};
+		</sql> 
+	</target>
+</project>

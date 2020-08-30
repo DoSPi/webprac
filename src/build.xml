@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<project name="Compile" default="all" basedir = ".."> 
+    <property file="build.properties"/>
+    <path id = "classpath">
+        <fileset dir = "${lib.dir}">
+            <include name = "*.jar"/>
+        </fileset>
+        <pathelement path = "${build.dir}"/>
+    </path>
+    <taskdef name = "testng" classname = "org.testng.TestNGAntTask">
+        <classpath>
+            <pathelement location = "${testng.classpath}"/>
+        </classpath>
+    </taskdef>
+    <target name = "runtests"  depends ="compile">
+        <mkdir dir = "${report.dir}"/>
+        <testng classpathref="classpath"
+            outputDir="${report.dir}"
+            haltOnFailure="false" verbose="2">
+            <classfileset dir="${build.dir}/test" includes="*.class" />
+        </testng>
+    </target>
+    <target name="compile">
+        <mkdir dir = "${build.dir}"/>
+        <copy file="${src.dir}/hibernate.cfg.xml" tofile="${build.dir}/hibernate.cfg.xml"/>  
+        <javac includeantruntime = "false"
+            destdir = "${build.dir}"
+            srcdir = "${src.dir}">
+            <classpath refid = "classpath"/>
+        </javac>
+    </target>
+    <target name ="all"  depends = "compile, runtests"/>
+</project>
