@@ -8,7 +8,7 @@ import javax.persistence.Column;
 public class Department{
     @Id
     @Column(name ="department_id")
-    private int department_id;
+    private long department_id;
     @Column (name="name", length = 64, nullable = false)
     private String name;
     @Column(name="address", length = 256, nullable = false)
@@ -17,7 +17,7 @@ public class Department{
 		this.name = name;
 		this.address = address;
 	}
-	public int getDepartment_id() {
+	public long getDepartment_id() {
 		return department_id;
 	}
 	public void setDepartment_id(int department_id) {

@@ -8,7 +8,7 @@ import javax.persistence.Column;
 public class Type{
     @Id
     @Column(name ="type_id")
-    private int type_id;
+    private long type_id;
     @Column (name="name", length = 64, nullable = false)
     private String name;
     @Column(name="loan_max", nullable = false)
@@ -33,7 +33,7 @@ public class Type{
 		this.add_max = add_max;
 		this.sub_max = sub_max;
 	}
-	public int getType_id() {
+	public long getType_id() {
 		return type_id;
 	}
 	public void setType_id(int type_id) {

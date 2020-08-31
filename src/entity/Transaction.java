@@ -16,7 +16,7 @@ public class Transaction{
     @Id
     @Column(name ="transaction_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int transaction_id;
+    private long transaction_id;
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = true)
     private Account account;
@@ -31,7 +31,7 @@ public class Transaction{
 		this.value = value;
 		this.details = details;
 	}
-	public int getTransaction_id() {
+	public long getTransaction_id() {
 		return transaction_id;
 	}
 	public void setTransaction_id(int transaction_id) {
