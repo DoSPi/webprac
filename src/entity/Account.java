@@ -29,7 +29,7 @@ public class Account{
     @JoinColumn(name ="department_id", nullable = false)
     Department department;
     @ManyToOne
-    @JoinColumn(name = "account_id", nullable = false)
+    @JoinColumn(name = "payment_account_id", nullable = false)
     Account payment_account;
     @Column(name = "date", nullable = false)
     private Date date;
@@ -44,6 +44,8 @@ public class Account{
         this.date =date;
         this.closed = closed;
         
+    }
+    public Account() {
     }
 	public long getAccount_id() {
 		return account_id;

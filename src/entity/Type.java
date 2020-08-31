@@ -33,6 +33,9 @@ public class Type{
 		this.add_max = add_max;
 		this.sub_max = sub_max;
 	}
+	public Type() {
+		
+	}
 	public long getType_id() {
 		return type_id;
 	}

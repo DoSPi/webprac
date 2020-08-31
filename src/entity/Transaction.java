@@ -31,6 +31,9 @@ public class Transaction{
 		this.value = value;
 		this.details = details;
 	}
+	public Transaction() {
+		
+	}
 	public long getTransaction_id() {
 		return transaction_id;
 	}

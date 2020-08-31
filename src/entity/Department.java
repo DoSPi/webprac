@@ -17,6 +17,9 @@ public class Department{
 		this.name = name;
 		this.address = address;
 	}
+	public Department() {
+		
+	}
 	public long getDepartment_id() {
 		return department_id;
 	}

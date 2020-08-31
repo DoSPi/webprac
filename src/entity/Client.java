@@ -11,7 +11,7 @@ public class Client{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="client_id")
-    private int client_id;
+    private long client_id;
     @Column (name="name", nullable = false, length = 64)
     private String name;
     @Column(name="address", nullable = true, length = 256)
@@ -20,15 +20,16 @@ public class Client{
     private String email;
     @Column(name="phone_number", nullable = true, length = 32)
     private String phone_number;
-    public Client(int client_id, String name, String address, String email, String phone_number) {
-		super();
-		this.client_id = client_id;
+    public Client(String name, String address, String email, String phone_number) {
 		this.name = name;
 		this.address = address;
 		this.email = email;
 		this.phone_number = phone_number;
 	}
-	public int getClient_id() {
+    public Client() {
+    	
+    }
+	public long getClient_id() {
 		return client_id;
 	}
 	public void setClient_id(int client_id) {
