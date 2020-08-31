@@ -1,5 +1,7 @@
 package entity;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.Column;
@@ -7,6 +9,7 @@ import javax.persistence.Column;
 @Table(name="type")
 public class Type{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="type_id")
     private long type_id;
     @Column (name="name", length = 64, nullable = false)

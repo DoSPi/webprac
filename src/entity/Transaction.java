@@ -14,8 +14,8 @@ import javax.persistence.Column;
 @Table(name="transaction")
 public class Transaction{
     @Id
-    @Column(name ="transaction_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="transaction_id")
     private long transaction_id;
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = true)
