@@ -11,6 +11,10 @@
     <delete failonerror="false" dir="${build.dir}"/>
     <delete failonerror="false" dir="${report.dir}"/>
   </target>
+	<target name = "runtests" depends="setupdb, compile">
+		<ant antfile = "${src.dir}/build.xml" target = "runtests"/>	
+	</target>
 	<target name = "all" depends="setupdb, compile">
 	</target>
+	
 </project>

@@ -12,7 +12,7 @@
             <pathelement location = "${testng.classpath}"/>
         </classpath>
     </taskdef>
-    <target name = "runtests"  depends ="compile">
+    <target name = "runtests">
         <mkdir dir = "${report.dir}"/>
         <testng classpathref="classpath"
             outputDir="${report.dir}"

@@ -29,7 +29,7 @@
 			src="${sql.dir}/populate.sql">
 		</sql>
 	</target>
-	<target name="all" depends="create, populate"/>
+	<target name="all" depends="clean,create, populate"/>
 	<target name="clean">
 		<sql classpath="${db.classpath}"
 			driver="${db.driver}"
