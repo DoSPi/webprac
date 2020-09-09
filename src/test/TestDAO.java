@@ -40,6 +40,9 @@ public class TestDAO {
 		acc.setSession(session);
 		Account x = acc.get(1l);
 		Assert.assertEquals(x.getAccount_id(),1);
+		Assert.assertEquals(x.getClient().getClient_id(),1);
+		Assert.assertEquals(x.getClient().getName(),"Ivan ivanov");
+		Assert.assertEquals(x.getBalance(),125.35);
 		end();
 	}
 	@Test(priority = 2)
@@ -60,6 +63,11 @@ public class TestDAO {
 		acc.setSession(session);
 		List<Account> t = acc.getAll();
 		Assert.assertEquals(t.size(), 3);
+		Account x =t.get(0);
+		Assert.assertEquals(x.getAccount_id(),1);
+		Assert.assertEquals(x.getClient().getClient_id(),1);
+		Assert.assertEquals(x.getClient().getName(),"Ivan ivanov");
+		Assert.assertEquals(x.getBalance(),125.35);	
 		end();
 	} 
 	@Test(priority = 4)
@@ -93,13 +101,22 @@ public class TestDAO {
 		t.setSession(session);
 		int old = t.getAll().size();
 		entity.Transaction tr = t.get(1l);
-		Assert.assertEquals(tr.getTransaction_id(), 1);
 		Assert.assertNotNull(tr);
+		Assert.assertEquals(tr.getTransaction_id(), 1);
 		t.delete(tr);
 		Assert.assertEquals(t.getAll().size(), old - 1);
 		end();
 		
 	}
+	@Test(priority = 7, expectedExceptions = Exception.class)
+	public void testDeleteEx() throws Exception
+	{
+		begin();
+		DepartmentDao dep = new DepartmentDao();
+		dep.setSession(session);
+		dep.delete(null);
+		end();
+	}  
 	/*@Test(priority = 7)
 	public void testAccount() throws Exception
 	{

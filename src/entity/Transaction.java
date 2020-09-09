@@ -18,8 +18,8 @@ public class Transaction{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="transaction_id")
     private long transaction_id;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "account_id", nullable = true)
+    @ManyToOne
+    @JoinColumn(name = "account_id", nullable = false)
     private Account account;
     @Column (name="date", nullable = false)
     private Date date;
