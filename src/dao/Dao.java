@@ -8,14 +8,16 @@ import javax.persistence.criteria.CriteriaQuery;
 import org.hibernate.Session;
 
 import utils.HibernateSessionFactoryUtil;
+
+import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
-public class Dao<T> {
+public class Dao<T>{
 	private final Class<T> type;
 	Session session;
 	public Dao(){
 		 this.type = (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 	 }
-	public T get(long id) {
+	public T get(Long  id) {
 		return session.get(type, id);
 
 	}

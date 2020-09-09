@@ -1,5 +1,8 @@
 package test;
 import entity.*;
+
+import java.util.List;
+
 import org.hibernate.Session;
 import org.testng.Assert;
 import org.testng.TestException;
@@ -29,71 +32,86 @@ public class TestDAO {
 		tx.commit();
 		session.close();
 	}
-	/*
 	@Test(priority = 1)
 	public void testGet() throws Exception
 	{
+		begin();
 		AccountDao acc = new AccountDao();
 		acc.setSession(session);
-		Account x = acc.get(1);
+		Account x = acc.get(1l);
 		Assert.assertEquals(x.getAccount_id(),1);
 		end();
 	}
 	@Test(priority = 2)
 	public void testGetNull() throws Exception
 	{
+		begin();
 		AccountDao acc = new AccountDao();
 		acc.setSession(session);
-		Account t = acc.get(1000);
+		Account t = acc.get(1000l);
 		Assert.assertEquals(t, null);
 		end();
-	} 
+	}
 	@Test(priority = 3)
+	public void testGetAll() throws Exception
+	{
+		begin();
+		AccountDao acc = new AccountDao();
+		acc.setSession(session);
+		List<Account> t = acc.getAll();
+		Assert.assertEquals(t.size(), 3);
+		end();
+	} 
+	@Test(priority = 4)
 	public void testSave() throws Exception
 	{
+		begin();
 		DepartmentDao dep = new DepartmentDao();
 		dep.setSession(session);
 		Department x = new Department("aaa", "bbbb");
 		dep.save(x);
-		Department t = dep.get(4);
+		Department t = dep.get(4l);
 		Assert.assertEquals(x.getAddress(), t.getAddress());
 		Assert.assertEquals(x.getName(), t.getName());
 		end();
 	} 
-	@Test(priority = 4, expectedExceptions = Exception.class)
+	@Test(priority = 5, expectedExceptions = Exception.class)
 	public void testSaveEx() throws Exception
 	{
+		begin();
 		DepartmentDao dep = new DepartmentDao();
 		dep.setSession(session);
 		Department x = new Department("aaa", "bbbb");
 		x.setName(null);
 		dep.save(x);
 		end();
-	}  */
-	@Test(priority = 5)
+	}  
+	@Test(priority = 6)
 	public void testDelete()  throws Exception{
 		begin();
 		TransactionDao t = new TransactionDao();
 		t.setSession(session);
-		entity.Transaction tr = t.get(1);
+		int old = t.getAll().size();
+		entity.Transaction tr = t.get(1l);
+		Assert.assertEquals(tr.getTransaction_id(), 1);
 		Assert.assertNotNull(tr);
-		//t.delete(tr);
-		Assert.assertEquals(t.get(1).getTransaction_id(), 1);
-		Assert.assertEquals(t.getAll().size(), 3);
+		t.delete(tr);
+		Assert.assertEquals(t.getAll().size(), old - 1);
 		end();
 		
-	} /*
-	@Test(priority = 6)
+	}
+	/*@Test(priority = 7)
 	public void testAccount() throws Exception
 	{
+		begin();
 		AccountDao acc = new AccountDao();
 		acc.setSession(session);
 		int size = acc.getAll().size();
-		Assert.assertEquals(size, 3);
-		Account t = acc.get(1);
+		Assert.assertEquals(size, 2);
+		Account t = acc.get(2l);
 		acc.delete(t);
 		size = acc.getAll().size();
-		Assert.assertEquals(size, 2);
+		//Assert.assertEquals(size, 2);
 		end();
 	} */
 } 

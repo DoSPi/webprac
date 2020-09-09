@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<project name="Compile" default="all" basedir = ".."> 
+<project name="Compile" basedir = ".."> 
     <property file="build.properties"/>
     <path id = "classpath">
         <fileset dir = "${lib.dir}">
@@ -25,9 +25,8 @@
         <copy file="${src.dir}/hibernate.cfg.xml" tofile="${build.dir}/hibernate.cfg.xml"/>  
         <javac includeantruntime = "false"
             destdir = "${build.dir}"
-            srcdir = "${src.dir}">
+            srcdir = "${src.dir}" target= "8" source="8">
             <classpath refid = "classpath"/>
         </javac>
     </target>
-    <target name ="all"  depends = "compile, runtests"/>
 </project>

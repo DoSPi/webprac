@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 @Entity
 @Table(name="transaction")
@@ -17,7 +18,7 @@ public class Transaction{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="transaction_id")
     private long transaction_id;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "account_id", nullable = true)
     private Account account;
     @Column (name="date", nullable = false)
