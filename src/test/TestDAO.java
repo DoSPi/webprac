@@ -117,18 +117,32 @@ public class TestDAO {
 		dep.delete(null);
 		end();
 	}  
-	/*@Test(priority = 7)
-	public void testAccount() throws Exception
+	@Test(priority = 8)
+	public void testUpdate() throws Exception
 	{
 		begin();
-		AccountDao acc = new AccountDao();
-		acc.setSession(session);
-		int size = acc.getAll().size();
-		Assert.assertEquals(size, 2);
-		Account t = acc.get(2l);
-		acc.delete(t);
-		size = acc.getAll().size();
-		//Assert.assertEquals(size, 2);
+		TypeDao dao = new TypeDao();
+		dao.setSession(session);
+		entity.Type t =  dao.get(2l);
+		Assert.assertEquals(t.getType_id(), 2);
+		Assert.assertEquals(t.getName(), "debit");
+		t.setName("testname");
+		dao.update(t);
+		entity.Type p =  dao.get(2l);
+		Assert.assertEquals(t.getType_id(), 2);
+		Assert.assertEquals(t.getName(), "testname");
 		end();
-	} */
+	}
+	@Test(priority = 9, expectedExceptions = Exception.class)
+	public void testUpdateEx() throws Exception
+	{
+		begin();
+		TypeDao dao = new TypeDao();
+		dao.setSession(session);
+		entity.Type t = new Type("aba",2,3,4,5,6,7);
+		dao.update(t);
+		end();
+	}
+	
+	
 } 

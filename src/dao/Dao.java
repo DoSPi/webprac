@@ -26,7 +26,7 @@ public class Dao<T>{
         session.save(t);
 	}
 
-	public void update(T t, String[] params) {
+	public void update(T t) {
         session.update(t);
 	}
 	public void delete(T t) {
