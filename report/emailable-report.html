@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.param,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.param td,table.param th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.param th {vertical-align:bottom}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.param td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.param tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing=0 cellpadding=0 class="param">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Ant test</td><td class="numi">9</td><td class="numi">9</td><td class="numi">0</td><td class="numi">0</td><td class="numi">1.2 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<a id="summary"></a>
+<table cellspacing=0 cellpadding=0 class="passed">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Ant test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="9">test.TestDAO<td><a href="#m1"><b>testDelete</b>  </a></td><td class="numi">1</td><td>1599734687232</td><td class="numi">19</td></tr><tr class="passedodd"><td><a href="#m2"><b>testDeleteEx</b>  </a></td><td class="numi">1</td><td>1599734687252</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m3"><b>testGet</b>  </a></td><td class="numi">1</td><td>1599734686065</td><td class="numi">1082</td></tr><tr class="passedodd"><td><a href="#m4"><b>testGetAll</b>  </a></td><td class="numi">1</td><td>1599734687149</td><td class="numi">69</td></tr><tr class="passedodd"><td><a href="#m5"><b>testGetNull</b>  </a></td><td class="numi">1</td><td>1599734687148</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m6"><b>testSave</b>  </a></td><td class="numi">1</td><td>1599734687218</td><td class="numi">13</td></tr><tr class="passedodd"><td><a href="#m7"><b>testSaveEx</b>  </a></td><td class="numi">1</td><td>1599734687231</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m8"><b>testUpdate</b>  </a></td><td class="numi">1</td><td>1599734687252</td><td class="numi">7</td></tr><tr class="passedodd"><td><a href="#m9"><b>testUpdateEx</b>  </a></td><td class="numi">1</td><td>1599734687259</td><td class="numi">6</td></tr>
+</table>
+<h1>Ant test</h1>
+<a id="m1"></a><h2>test.TestDAO:testDelete</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m2"></a><h2>test.TestDAO:testDeleteEx</h2>
+<div style="padding-left:3em">
+<p>attempt to create delete event with null entity</p>
+org.hibernate.event.spi.DeleteEvent.&lt;init&gt;(DeleteEvent.java:31)
+<br/>at org.hibernate.internal.SessionImpl.delete(SessionImpl.java:834)
+<br/>at dao.Dao.delete(Unknown Source)
+<br/>at test.TestDAO.testDeleteEx(Unknown Source)
+<br/>24 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m3"></a><h2>test.TestDAO:testUpdateEx</h2>
+<div style="padding-left:3em">
+<p>Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect) : [entity.Type#0]</p>
+org.hibernate.internal.ExceptionConverterImpl.wrapStaleStateException(ExceptionConverterImpl.java:226)
+<br/>at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:93)
+<br/>at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:181)
+<br/>at org.hibernate.internal.ExceptionConverterImpl.convert(ExceptionConverterImpl.java:188)
+<br/>at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1364)
+<br/>at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:451)
+<br/>at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3210)
+<br/>at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2378)
+<br/>at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+<br/>at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+<br/>at test.TestDAO.end(Unknown Source)
+<br/>at test.TestDAO.testUpdateEx(Unknown Source)
+<br/>24 lines not shown
+<p>Caused by Row was updated or deleted by another transaction (or unsaved-value mapping was incorrect) : [entity.Type#0]</p>
+org.hibernate.persister.entity.AbstractEntityPersister.check(AbstractEntityPersister.java:2588)
+<br/>at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3432)
+<br/>at org.hibernate.persister.entity.AbstractEntityPersister.updateOrInsert(AbstractEntityPersister.java:3295)
+<br/>at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3707)
+<br/>at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:201)
+<br/>at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+<br/>at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+<br/>at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:723)
+<br/>at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+<br/>at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+<br/>at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+<br/>at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+<br/>at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1360)
+<br/>at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:451)
+<br/>at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3210)
+<br/>at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2378)
+<br/>at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+<br/>at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+<br/>at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+<br/>at test.TestDAO.end(Unknown Source)
+<br/>at test.TestDAO.testUpdateEx(Unknown Source)
+<br/>24 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m4"></a><h2>test.TestDAO:testSave</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m5"></a><h2>test.TestDAO:testGet</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m6"></a><h2>test.TestDAO:testGetNull</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m7"></a><h2>test.TestDAO:testGetAll</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m8"></a><h2>test.TestDAO:testUpdate</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<a id="m9"></a><h2>test.TestDAO:testSaveEx</h2>
+<div style="padding-left:3em">
+<p>not-null property references a null or transient value : entity.Department.name</p>
+org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:111)
+<br/>at org.hibernate.engine.internal.Nullability.checkNullability(Nullability.java:55)
+<br/>at org.hibernate.action.internal.AbstractEntityInsertAction.nullifyTransientReferencesIfNotAlready(AbstractEntityInsertAction.java:116)
+<br/>at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:72)
+<br/>at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:645)
+<br/>at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:282)
+<br/>at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:263)
+<br/>at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:317)
+<br/>at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:330)
+<br/>at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:287)
+<br/>at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:193)
+<br/>at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:123)
+<br/>at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.saveWithGeneratedOrRequestedId(DefaultSaveOrUpdateEventListener.java:194)
+<br/>at org.hibernate.event.internal.DefaultSaveEventListener.saveWithGeneratedOrRequestedId(DefaultSaveEventListener.java:38)
+<br/>at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.entityIsTransient(DefaultSaveOrUpdateEventListener.java:179)
+<br/>at org.hibernate.event.internal.DefaultSaveEventListener.performSaveOrUpdate(DefaultSaveEventListener.java:32)
+<br/>at org.hibernate.event.internal.DefaultSaveOrUpdateEventListener.onSaveOrUpdate(DefaultSaveOrUpdateEventListener.java:75)
+<br/>at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+<br/>at org.hibernate.internal.SessionImpl.fireSave(SessionImpl.java:634)
+<br/>at org.hibernate.internal.SessionImpl.save(SessionImpl.java:627)
+<br/>at org.hibernate.internal.SessionImpl.save(SessionImpl.java:622)
+<br/>at dao.Dao.save(Unknown Source)
+<br/>at test.TestDAO.testSaveEx(Unknown Source)
+<br/>24 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
