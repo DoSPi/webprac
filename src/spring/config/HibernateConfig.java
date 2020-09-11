@@ -2,6 +2,7 @@
 package spring.config;
 
 import org.hibernate.SessionFactory;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -9,7 +10,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import dao.AccountDao;
+import dao.*;
 
 import javax.sql.DataSource;
 import java.util.Properties;
@@ -51,7 +52,19 @@ public class HibernateConfig {
         return new HibernateTransactionManager(sessionFactory);
     }
 	@Bean
-	public AccountDao getDao() {
+	public AccountDao getAccountDao() {
 		return new AccountDao();
+	}
+	@Bean
+	public ClientDao getClientDao() {
+		return new ClientDao();
+	}
+	@Bean
+	public DepartmentDao getDepartmentDao() {
+		return new DepartmentDao();
+	}
+	@Bean
+	public TransactionDao getTransactionDao() {
+		return new TransactionDao();
 	}
 }

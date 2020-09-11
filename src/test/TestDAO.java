@@ -15,7 +15,7 @@ import utils.HibernateSessionFactoryUtil;
 import org.hibernate.Transaction;
 import dao.*;
 
-public class TestDAO {
+public class TestDAO { /*
 	private Session session;
 	private Transaction tx;
 	public TestDAO(){
@@ -144,5 +144,5 @@ public class TestDAO {
 		end();
 	}
 	
-	
+	*/
 } 

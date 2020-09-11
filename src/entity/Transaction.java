@@ -1,5 +1,6 @@
 package entity;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
@@ -9,7 +10,6 @@ import javax.persistence.ManyToOne;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 @Entity
 @Table(name="transaction")
@@ -58,6 +58,12 @@ public class Transaction{
 	}
 	public void setDetails(String details) {
 		this.details = details;
+	}
+	public Account getAccount() {
+		return account;
+	}
+	public void setAccount(Account account) {
+		this.account = account;
 	}
 	
     

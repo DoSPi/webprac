@@ -6,37 +6,31 @@
 
 <html>
     <head>
-        <title>Accounts</title>
+        <title>Transactions</title>
     </head>
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-	    <table id="AccountsTable">
+	    <table id="transactionsTable">
 		    <tr>
-		        <th>ID</th>
-		        <th>Type</th>
-		        <th>Department</th>
-		        <th>Client ID</th>
-		        <th>Balance</th>
-		        <th>Opening date </th>
-		        <th>Target ID</th>
-		        <th>Closed</th>
+		        <th>Id</th>
+		        <th>Account Id</th>
+		        <th>Date</th>
+		        <th>Value</th>
+		        <th>Details</th>
 		    </tr>
 		 <tr>
             <td><input type="text" id="id" onkeyup="Filter(0, id)" ></td>
-            <td><input type="text" id="type" onkeyup="Filter(1, id)" ></td>
-            <td><input type="text" id="department" onkeyup="Filter(2, id)"></td>
+            <td><input type="text" id="account_id" onkeyup="Filter(1, id)" ></td>
+            <td><input type="text" id="date" onkeyup="Filter(2, id)" ></td>
         </tr>
-		    <c:forEach items="${accountsList}" var="account" varStatus="status">
+		    <c:forEach items="${transactionsList}" var="transaction" varStatus="status">
 		        <tr>
-		            <td>${account.account_id}</td>
-		            <td>${account.type.name}</td>
-		            <td>${account.department.name}</td>
-		            <td>${account.client.client_id}</td>
-		            <td>${account.balance}</td>
-		            <td>${account.date}</td>
-		            <td>${account.payment_account.account_id}</td>
-		            <td>${account.closed}</td>
+		            <td>${transaction.transaction_id}</td>
+		         	<td>${transaction.account.account_id}</td>
+		            <td>${transaction.date}</td>
+		            <td>${transaction.value}</td>
+		            <td>${transaction.details}</td>
 		        </tr>
 		    </c:forEach>
 		</table>
@@ -45,7 +39,7 @@
     function Filter(id, input) {
         var filter, table, tr, td, i, txtValue;
         filter = document.getElementById(input).value.toUpperCase();
-        table = document.getElementById("AccountsTable");
+        table = document.getElementById("transactionsTable");
         tr = table.getElementsByTagName("tr");
         for (i = 2; i < tr.length; ++i) {
             td = tr[i].getElementsByTagName("td")[id];
