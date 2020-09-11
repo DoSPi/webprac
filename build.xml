@@ -31,7 +31,7 @@
 			<arg value="stop-domain"/>
 		</exec>
 	</target>
-	<target name = "deploy" depends="build-war, start-server">
+	<target name = "deploy" depends="build-war">
 		<exec executable = "${asadmin}">
 			<arg value="deploy"/>
 			<arg value = "--force=true"/>
