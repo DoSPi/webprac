@@ -29,4 +29,21 @@
             <classpath refid = "classpath"/>
         </javac>
     </target>
+    <target name = "build-war">
+        <mkdir dir = "tmp"/>
+        <mkdir dir = "tmp/WEB-INF" />
+        <copy todir = "tmp">
+            <fileset dir = "${src.dir}/web" includes = "**/*.*"/>
+        </copy>
+        <mkdir dir = "tmp/WEB-INF/lib"/>
+    	<copy todir = "tmp/WEB-INF/lib">
+    		<fileset dir = "${lib.dir}" includes = "**/*.*"/>	
+    	</copy>
+    	<mkdir dir = "tmp/WEB-INF/classes"/>
+    	<copy todir = "tmp/WEB-INF/classes">
+    		<fileset dir = "${build.dir}" includes = "**/*.*"/>	
+    	</copy>
+    	<jar jarfile = "${db.name}.war" basedir = "tmp"/>
+    	<delete dir = "tmp"/>
+    </target>
 </project>
