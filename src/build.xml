@@ -25,6 +25,8 @@
         <copy file="${src.dir}/hibernate.cfg.xml" tofile="${build.dir}/hibernate.cfg.xml"/>  
         <javac includeantruntime = "false"
             destdir = "${build.dir}"
+			source = "1.8"
+			target = "1.8"
             srcdir = "${src.dir}">
             <classpath refid = "classpath"/>
         </javac>
@@ -44,6 +46,5 @@
     		<fileset dir = "${build.dir}" includes = "**/*.*"/>	
     	</copy>
     	<jar jarfile = "${db.name}.war" basedir = "tmp"/>
-    	<delete dir = "tmp"/>
     </target>
 </project>
