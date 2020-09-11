@@ -1,16 +1,12 @@
 package dao;
 
 import java.util.List;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-
 import org.hibernate.Session;
-
-import utils.HibernateSessionFactoryUtil;
-
-import java.io.Serializable;
+import org.springframework.transaction.annotation.Transactional;
 import java.lang.reflect.ParameterizedType;
+@Transactional
 public class Dao<T>{
 	private final Class<T> type;
 	Session session;

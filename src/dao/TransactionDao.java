@@ -1,11 +1,8 @@
 package dao;
 import entity.Transaction;
-import utils.HibernateSessionFactoryUtil;
-import entity.Account;
-import java.util.List;
-
-import javax.persistence.TypedQuery;
-
-import org.hibernate.Session;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+@Transactional
+@Repository
 public class TransactionDao extends Dao<Transaction>{
     }

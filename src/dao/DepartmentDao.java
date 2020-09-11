@@ -1,6 +1,9 @@
 package dao;
 import entity.Department;
-import java.util.List;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+@Transactional
+@Repository
 public class DepartmentDao extends Dao<Department>{
 	
 }
