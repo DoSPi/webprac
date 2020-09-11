@@ -15,7 +15,7 @@ INSERT INTO account(client_id, balance, type_id, department_id, payment_account_
 (1,10.1,2,1,2,'2019-12-21','False'),
 (2,0,3,3,3,'2020-02-02','False');
 INSERT INTO transaction(account_id, date, value, details) VALUES
-(1, '2020-02-20 15:24:23', -15.23,'Покупка 15.23 в магазине Пятерочка'),
-(1,'2020-02-25 10:10:10', 100, NULL),
+(1, '2020-02-20 15:24:23', -15.23,'Buy 15.23 Pyatorochka'),
+(1,'2020-02-25 10:10:10', 100,'tesss'),
 (2,'2020-02-28 23:00:05', -2, NULL);
  
