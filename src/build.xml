@@ -22,7 +22,6 @@
     </target>
     <target name="compile">
         <mkdir dir = "${build.dir}"/>
-        <copy file="${src.dir}/hibernate.cfg.xml" tofile="${build.dir}/hibernate.cfg.xml"/>  
         <javac includeantruntime = "false"
             destdir = "${build.dir}"
 			source = "1.8"
