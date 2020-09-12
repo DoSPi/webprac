@@ -13,7 +13,7 @@
 	<delete failonerror="false" dir="${db.name}.war"/>
 	<delete failonerror="false" dir="tmp"/>
   </target>
-	<target name = "runtests" depends="setupdb, compile">
+	<target name = "runtests" depends="setupdb, compile,deploy">
 		<ant antfile = "${src.dir}/build.xml" target = "runtests"/>	
 	</target>
 	<target name = "all" depends="setupdb, deploy">
