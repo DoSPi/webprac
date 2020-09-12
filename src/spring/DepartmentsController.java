@@ -28,7 +28,7 @@ public class DepartmentsController{
 		   } else {
 			   Department c = dao.get(id);
 			   if (c == null) {
-				   return "Error";
+				   return "error";
 			   }
 			   model.addAttribute("department", c);
 		   }
@@ -43,7 +43,7 @@ public class DepartmentsController{
    public String DeleteDepartment(ModelMap model,@RequestParam(value="id", required = true) Long id) {
 	   Department c = dao.get(id);
 	   if (c == null) {
-		   return "Error";
+		   return "error";
 	   }
 	   dao.delete(c);
 	   return "redirect:departments";

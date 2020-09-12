@@ -40,15 +40,15 @@ public class TransactionsController{
    @RequestMapping(value = "add_transaction", method = RequestMethod.POST)
    public String Savetransaction(ModelMap model,@ModelAttribute("transaction") Transaction transaction) {
 	   if (transaction.getAccount() == null) {
-		   return "Error";
+		   return "error";
 	   }
 	   Account account = adao.get(transaction.getAccount().getAccount_id());
 	   if (account == null) {
-		   return "Error";
+		   return "error";
 	   }
 	   Type type = tdao.get(account.getType().getType_id());
 	   if (type == null) {
-		   return "Error";
+		   return "error";
 	   }
        double value = transaction.getValue();
        double max = account.getType().getAdd_max();
@@ -57,7 +57,7 @@ public class TransactionsController{
        double balance = account.getBalance();
        double loan = account.getType().getLoan_max();
        if (value > max || value < -min||  balance + value < -loan ) {
-           return "Error";
+           return "error";
        }
        Instant instant = Instant.now();
        Timestamp timestamp = Timestamp.from(instant);

@@ -28,7 +28,7 @@ public class ClientsController{
 	   } else {
 		   Client c = dao.get(id);
 		   if (c == null) {
-			   return "Error";
+			   return "error";
 		   }
 		   model.addAttribute("client", c);
 	   }
@@ -43,7 +43,7 @@ public class ClientsController{
    public String DeleteClient(ModelMap model,@RequestParam(value="id", required = true) Long id) {
 	   Client c = dao.get(id);
 	   if (c == null) {
-		   return "Error";
+		   return "error";
 	   }
 	   dao.delete(c);
 	   return "redirect:clients";

@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.ui.ModelMap;
 
 @Controller
-@RequestMapping("/")
 public class RootController{
-   @RequestMapping(method = RequestMethod.GET)public String Root(ModelMap model) {
+   @RequestMapping(value = "/", method = RequestMethod.GET)public String Root(ModelMap model) {
       return "root";
    }
+   @RequestMapping(value = "error", method = RequestMethod.GET)public String Error(ModelMap model) {
+	      return "error";
+	   }
 } 
