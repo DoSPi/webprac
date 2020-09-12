@@ -13,6 +13,7 @@
     	<a href="<c:url value='/'/>">root</a>
     	<form:form modelAttribute="department" method="POST">
             <table>
+            <form:input type="hidden" path="department_id" value="${department_id}"/>
                  <tr>
                      <td>Name</td>
                      <td><form:input type="text" path="name"/></td>

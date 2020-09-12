@@ -1,6 +1,7 @@
  package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.ClientDao;
-import entity.Account;
 import entity.Client;
 
 import org.springframework.ui.ModelMap;
@@ -37,6 +37,15 @@ public class ClientsController{
    @RequestMapping(value = "add_client", method = RequestMethod.POST)
    public String SaveClient(ModelMap model,@ModelAttribute("client") Client client) {
 	   dao.save(client);
+	   return "redirect:clients";
+   }
+   @RequestMapping(value = "delete_client", method = RequestMethod.GET)
+   public String DeleteClient(ModelMap model,@RequestParam(value="id", required = true) Long id) {
+	   Client c = dao.get(id);
+	   if (c == null) {
+		   return "Error";
+	   }
+	   dao.delete(c);
 	   return "redirect:clients";
    }
 } 

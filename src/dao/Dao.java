@@ -25,7 +25,7 @@ public class Dao<T>{
 	}
 
 	public void save(T t) {
-		sessionFactory.getCurrentSession().save(t);
+		sessionFactory.getCurrentSession().saveOrUpdate(t);
 	}
 
 	public void update(T t) {

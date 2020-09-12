@@ -23,6 +23,8 @@
 		        <tr>
 		            <td>${department.name}</td>
 		            <td>${department.address}</td>
+		           	<td><a href="add_department?id=${department.department_id}">Edit</a></td>
+		            <td><a href="delete_department?id=${department.department_id}">Delete</a></td>
 		        </tr>
 		    </c:forEach>
 		</table>

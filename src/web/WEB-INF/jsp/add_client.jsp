@@ -12,6 +12,7 @@
     <body>
     	<a href="<c:url value='/'/>">root</a>
     	<form:form modelAttribute="client" method="POST">
+    	    <form:input type="hidden" path="client_id" value="${client_id}"/>
             <table>
                  <tr>
                      <td>Name</td>

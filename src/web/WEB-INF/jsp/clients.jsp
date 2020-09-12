@@ -33,6 +33,8 @@
 		            <td>${client.address}</td>
 		            <td>${client.email}</td>
 		            <td>${client.phone_number}</td>
+		            <td><a href="add_client?id=${client.client_id}">Edit</a></td>
+		            <td><a href="delete_client?id=${client.client_id}">Delete</a></td>
 		        </tr>
 		    </c:forEach>
 		</table>
