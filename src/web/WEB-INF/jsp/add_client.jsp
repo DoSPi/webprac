@@ -1,4 +1,4 @@
-  <%@ page language="java" contentType="text/html;charset=utf-8"%>
+   <%@ page language="java" contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -6,28 +6,28 @@
 
 <html>
     <head>
-        <title>Edit account</title>
+        <title>Add Client</title>
     </head>
     	
     <body>
     	<a href="<c:url value='/'/>">root</a>
-    	<form:form modelAttribute="account" method="POST">
+    	<form:form modelAttribute="client" method="POST">
             <table>
                  <tr>
-                     <td>Client Id</td>
-                     <td><form:input type="text" path="client.client_id"/></td>
+                     <td>Name</td>
+                     <td><form:input type="text" path="name"/></td>
                  </tr>
                                    <tr>
-                     <td>Payment Account Id</td>
-                     <td><form:input type="text" path="payment_account.account_id"/></td>
+                     <td>Address</td>
+                     <td><form:input type="text" path="address"/></td>
                  </tr>
                  <tr>
-                 <td>Type  Id</td>
-                     <td><form:input type="text" path="type.type_id"/></td>
+                 <td>Email</td>
+                     <td><form:input type="text" path="email"/></td>
                  </tr>
                  <tr>
-                  <td>Department Id</td>
-                     <td><form:input type="text" path="department.department_id"/></td>
+                 <td>Phone Number</td>
+                     <td><form:input type="text" path="phone_number"/></td>
                  </tr>
                  <tr>
                      <td colspan="2">

@@ -11,6 +11,9 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
+        <a href="add_client">
+    	Add  client
+    </a>
 	    <table id="ClientsTable">
 		    <tr>
 		        <th>ID</th>

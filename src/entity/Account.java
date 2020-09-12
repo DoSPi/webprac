@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 @Entity
 @Table(name="account")
@@ -30,7 +31,7 @@ public class Account{
     @JoinColumn(name ="department_id", nullable = false)
     Department department;
     @ManyToOne
-    @JoinColumn(name = "payment_account_id", nullable = false)
+    @JoinColumn(name = "payment_account_id", nullable = true )
     Account payment_account;
     @Column(name = "date", nullable = false)
     private Date date;
@@ -66,12 +67,6 @@ public class Account{
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public Department getDepartment() {
-		return department;
-	}
-	public void setDepartment(Department department) {
-		this.department = department;
-	}
 	public Account getPayment_account() {
 		return payment_account;
 	}
@@ -96,6 +91,12 @@ public class Account{
 	}
 	public void setType(Type type) {
 		this.type = type;
+	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
 	}
 	
 	

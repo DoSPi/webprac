@@ -67,4 +67,8 @@ public class HibernateConfig {
 	public TransactionDao getTransactionDao() {
 		return new TransactionDao();
 	}
+	@Bean
+	public TypeDao getTypeDao() {
+		return new TypeDao();
+	}
 }

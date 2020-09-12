@@ -12,7 +12,6 @@ import dao.AccountDao;
 import entity.Account;
 
 import org.springframework.ui.ModelMap;
-import form.AccountForm;
 @Controller
 public class AccountsController{
 	@Autowired
@@ -31,7 +30,7 @@ public class AccountsController{
 	   return "redirect:accounts";
    }
    @RequestMapping(value = "add_account", method = RequestMethod.GET)
-   public String SaveAccount(ModelMap model) {
+   public String AddAccount(ModelMap model) {
 	   model.addAttribute("account", new Account());
 	   return "add_account";
    }

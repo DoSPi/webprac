@@ -11,6 +11,9 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
+      <a href="add_transaction">
+    	Add transaction
+    </a>
 	    <table id="transactionsTable">
 		    <tr>
 		        <th>Id</th>
