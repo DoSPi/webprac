@@ -167,6 +167,55 @@ public class SystemTest{
 		Assert.assertNotEquals(driver.findElement(By.xpath("//tr[2]/td[1]")).getText(), a);
 		
 	}
+	@Test
+	public void DeleteDepartmentEx(){
+		driver.get("localhost:8080/bank/delete_department?id=1000");
+		Assert.assertEquals( driver.getTitle(), "Error");
+	}
+	
+	@Test(priority=7)
+	public void AddTransaction() {
+		driver.get("localhost:8080/bank/");
+		driver.findElement(By.linkText("Transactions")).click();
+		Assert.assertEquals(driver.getTitle(),"Transactions");
+		Assert.assertEquals(driver.findElement(By.xpath("//tr[3]/td[1]")).getText(), "1");
+		driver.findElement(By.linkText("Add Transaction")).click();
+		Assert.assertEquals(driver.getTitle(),"Add Transaction");
+		driver.findElement(By.id("account.account_id")).sendKeys("1");
+		driver.findElement(By.id("value")).clear();
+		driver.findElement(By.id("value")).sendKeys("10");
+		driver.findElement(By.id("details")).sendKeys("kkkkz");
+		driver.findElement(By.id("add")).click();
+		Assert.assertEquals(driver.findElement(By.xpath("//tr[6]/td[2]")).getText(), "1");
+		Assert.assertEquals(driver.findElement(By.xpath("//tr[6]/td[4]")).getText(), "10.0");
+		Assert.assertEquals(driver.findElement(By.xpath("//tr[6]/td[5]")).getText(), "kkkkz");
+	}
+	
+	@Test(priority=8)
+	public void AddTransactionEx1() {
+		driver.get("localhost:8080/bank/");
+		driver.findElement(By.linkText("Transactions")).click();
+		Assert.assertEquals(driver.getTitle(),"Transactions");
+		driver.findElement(By.linkText("Add Transaction")).click();
+		Assert.assertEquals(driver.getTitle(),"Add Transaction");
+		driver.findElement(By.id("account.account_id")).sendKeys("1");
+		driver.findElement(By.id("value")).clear();
+		driver.findElement(By.id("value")).sendKeys("1000000");
+		driver.findElement(By.id("add")).click();
+		Assert.assertEquals( driver.getTitle(), "Error");
+	}	
+	@Test(priority=9)
+	public void AddTransactionEx2() {
+		driver.get("localhost:8080/bank/");
+		driver.findElement(By.linkText("Transactions")).click();
+		Assert.assertEquals(driver.getTitle(),"Transactions");
+		driver.findElement(By.linkText("Add Transaction")).click();
+		Assert.assertEquals(driver.getTitle(),"Add Transaction");
+		driver.findElement(By.id("account.account_id")).sendKeys("100000");
+		driver.findElement(By.id("value")).sendKeys("1");
+		driver.findElement(By.id("add")).click();
+		Assert.assertEquals( driver.getTitle(), "Error");
+	} 
 
 	
  }

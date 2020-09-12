@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>Add Department</title>
+        <title>Add Transaction</title>
     </head>
     	
     <body>
@@ -27,7 +27,7 @@
                  </tr>
                  <tr>
                      <td colspan="2">
-                        <input type="submit" value="Add" />
+                        <input type="submit" id="add" value="Add" />
                      </td>
              </table>
         </form:form>
