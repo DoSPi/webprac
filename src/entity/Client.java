@@ -29,12 +29,6 @@ public class Client{
     public Client() {
     	
     }
-	public long getClient_id() {
-		return client_id;
-	}
-	public void setClient_id(int client_id) {
-		this.client_id = client_id;
-	}
 	public String getName() {
 		return name;
 	}
@@ -58,6 +52,12 @@ public class Client{
 	}
 	public void setPhone_number(String phone_number) {
 		this.phone_number = phone_number;
+	}
+	public long getClient_id() {
+		return client_id;
+	}
+	public void setClient_id(long client_id) {
+		this.client_id = client_id;
 	}
     
 }

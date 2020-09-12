@@ -89,10 +89,12 @@ public class Account{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public boolean isClosed() {
-		return closed;
-	}
+	
 	public void setClosed(boolean closed) {
 		this.closed = closed;
 	}
+	public boolean isClosed() {
+		return closed;
+	}
+	
 }

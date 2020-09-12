@@ -11,6 +11,9 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
+    <a href="edit_account">
+    	Add account
+    </a>
 	    <table id="AccountsTable">
 		    <tr>
 		        <th>ID</th>
@@ -36,7 +39,7 @@
 		            <td>${account.balance}</td>
 		            <td>${account.date}</td>
 		            <td>${account.payment_account.account_id}</td>
-		            <td>${account.closed}</td>
+		            <td><a href="edit_account?id=${account.account_id}">${account.closed}</a></td>
 		        </tr>
 		    </c:forEach>
 		</table>
