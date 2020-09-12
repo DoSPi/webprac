@@ -1,6 +1,7 @@
 package spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +12,7 @@ import dao.AccountDao;
 import entity.Account;
 
 import org.springframework.ui.ModelMap;
-
+import form.AccountForm;
 @Controller
 public class AccountsController{
 	@Autowired
@@ -29,13 +30,19 @@ public class AccountsController{
 	   }
 	   return "redirect:accounts";
    }
-  /* @RequestMapping(value = "edit_account", method = RequestMethod.POST)
+   @RequestMapping(value = "add_account", method = RequestMethod.GET)
+   public String SaveAccount(ModelMap model) {
+	   model.addAttribute("account", new Account());
+	   return "add_account";
+   }
+   @RequestMapping(value = "add_account", method = RequestMethod.POST)
    public String SaveAccount(ModelMap model,@ModelAttribute("account") Account account) {
-	   if (adao.get(account.getAccount_id()) != null) {
-		   adao.update(account);
-	   } else {
-		   adao.save(account);
-	   }
+	   account.setBalance(0);
+	   account.setClosed(false);
+	   java.util.Date uDate = new java.util.Date();
+	   java.sql.Date Date = new java.sql.Date(uDate.getTime());
+	   account.setDate(Date);
+	   adao.save(account);
 	   return "redirect:accounts";
-   } */
+   }
 } 

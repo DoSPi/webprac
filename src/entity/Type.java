@@ -39,12 +39,7 @@ public class Type{
 	public Type() {
 		
 	}
-	public long getType_id() {
-		return type_id;
-	}
-	public void setType_id(int type_id) {
-		this.type_id = type_id;
-	}
+	
 	public String getName() {
 		return name;
 	}
@@ -86,5 +81,11 @@ public class Type{
 	}
 	public void setSub_max(double sub_max) {
 		this.sub_max = sub_max;
+	}
+	public long getType_id() {
+		return type_id;
+	}
+	public void setType_id(long type_id) {
+		this.type_id = type_id;
 	}  
 }

@@ -11,7 +11,7 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-    <a href="edit_account">
+    <a href="add_account">
     	Add account
     </a>
 	    <table id="AccountsTable">

@@ -1,5 +1,6 @@
 package entity;
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
@@ -65,12 +66,6 @@ public class Account{
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public Type getType() {
-		return type;
-	}
-	public void setType(Type type) {
-		this.type = type;
-	}
 	public Department getDepartment() {
 		return department;
 	}
@@ -96,5 +91,12 @@ public class Account{
 	public boolean isClosed() {
 		return closed;
 	}
+	public Type getType() {
+		return type;
+	}
+	public void setType(Type type) {
+		this.type = type;
+	}
+	
 	
 }
