@@ -11,9 +11,7 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-    <a href="add_account">
-    	Add account
-    </a>
+    <a href="./add_account">Add account</a>
 	    <table id="AccountsTable">
 		    <tr>
 		        <th>ID</th>
@@ -26,9 +24,9 @@
 		        <th>Closed</th>
 		    </tr>
 		 <tr>
-            <td><input type="text" id="id" onkeyup="Filter(0, id)" ></td>
-            <td><input type="text" id="type" onkeyup="Filter(1, id)" ></td>
-            <td><input type="text" id="department" onkeyup="Filter(2, id)"></td>
+            <td><input type="text" id="id" onkeyup="Filter(0, id)" /></td>
+            <td><input type="text" id="type" onkeyup="Filter(1, id)" /></td>
+            <td><input type="text" id="department" onkeyup="Filter(2, id)"/></td>
         </tr>
 		    <c:forEach items="${accountsList}" var="account" varStatus="status">
 		        <tr>
@@ -39,7 +37,7 @@
 		            <td>${account.balance}</td>
 		            <td>${account.date}</td>
 		            <td>${account.payment_account.account_id}</td>
-		            <td><a href="edit_account?id=${account.account_id}">${account.closed}</a></td>
+		            <td><a href="./edit_account?id=${account.account_id}">${account.closed}</a></td>
 		        </tr>
 		    </c:forEach>
 		</table>

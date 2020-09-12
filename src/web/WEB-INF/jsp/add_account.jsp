@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>Edit account</title>
+        <title>Edit Account</title>
     </head>
     	
     <body>
@@ -31,7 +31,7 @@
                  </tr>
                  <tr>
                      <td colspan="2">
-                        <input type="submit" value="Add" />
+                        <input type="submit" id="add" value="Add" />
                      </td>
              </table>
         </form:form>

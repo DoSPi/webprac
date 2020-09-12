@@ -36,12 +36,16 @@ public class AccountsController{
    }
    @RequestMapping(value = "add_account", method = RequestMethod.POST)
    public String SaveAccount(ModelMap model,@ModelAttribute("account") Account account) {
-	   account.setBalance(0);
-	   account.setClosed(false);
-	   java.util.Date uDate = new java.util.Date();
-	   java.sql.Date Date = new java.sql.Date(uDate.getTime());
-	   account.setDate(Date);
-	   adao.save(account);
-	   return "redirect:accounts";
+	   try {
+		   account.setBalance(0);
+		   account.setClosed(false);
+		   java.util.Date uDate = new java.util.Date();
+		   java.sql.Date Date = new java.sql.Date(uDate.getTime());
+		   account.setDate(Date);
+		   adao.save(account);
+		   return "redirect:accounts";
+	   } catch (Exception e) {
+		   return "error";
+	   }
    }
 } 
