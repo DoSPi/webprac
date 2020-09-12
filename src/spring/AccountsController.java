@@ -23,10 +23,11 @@ public class AccountsController{
    @RequestMapping(value = "edit_account", method = RequestMethod.GET)
    public String EditAccount(ModelMap model, @RequestParam(value="id", required=true) Long id) {
 	   Account p = adao.get(id);
-	   if  (p != null) {
+	   if (p == null) {
+		   return "error";
+	   }
 		   p.setClosed(!p.isClosed());
 		   adao.update(p);
-	   }
 	   return "redirect:accounts";
    }
    @RequestMapping(value = "add_account", method = RequestMethod.GET)

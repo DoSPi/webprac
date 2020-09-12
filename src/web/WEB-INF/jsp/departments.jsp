@@ -6,14 +6,12 @@
 
 <html>
     <head>
-        <title>departments</title>
+        <title>Departments</title>
     </head>
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-        <a href="./add_department">
-    	Add Department
-    </a>
+        <a href="./add_department">Add Department</a>
 	    <table id="departmentsTable">
 		    <tr>
 		        <th>Name</th>

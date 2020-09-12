@@ -32,7 +32,7 @@
                  </tr>
                  <tr>
                      <td colspan="2">
-                        <input type="submit" id="add_a" value="Add" />
+                        <input type="submit" id="add" value="Add" />
                      </td>
              </table>
         </form:form>
