@@ -11,9 +11,7 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-        <a href="/add_client">
-    	Add  client
-    </a>
+        <a href="./add_client">Add Client</a>
 	    <table id="ClientsTable">
 		    <tr>
 		        <th>ID</th>
@@ -23,8 +21,8 @@
 		        <th>Phone number</th>
 		    </tr>
 		 <tr>
-            <td><input type="text" id="id" onkeyup="Filter(0, id)" ></td>
-            <td><input type="text" id="name" onkeyup="Filter(1, id)" ></td>
+            <td><input type="text" id="id" onkeyup="Filter(0, id)" /></td>
+            <td><input type="text" id="name" onkeyup="Filter(1, id)" /></td>
         </tr>
 		    <c:forEach items="${clientsList}" var="client" varStatus="status">
 		        <tr>

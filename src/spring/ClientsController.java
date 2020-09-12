@@ -22,7 +22,7 @@ public class ClientsController{
       return "clients";
    }
    @RequestMapping(value = "add_client", method = RequestMethod.GET)
-   public String AddClient(ModelMap model, @RequestParam(value="id") Long id) {
+   public String AddClient(ModelMap model, @RequestParam(value="id", required = false) Long id) {
 	   if (id == null) {
 	   model.addAttribute("client", new Client());
 	   } else {

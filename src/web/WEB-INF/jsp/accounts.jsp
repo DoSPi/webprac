@@ -11,7 +11,7 @@
     	
     <body>
     <a href="<c:url value='/'/>">root</a>
-    <a href="./add_account">Add account</a>
+    <a href="./add_account">Add Account</a>
 	    <table id="AccountsTable">
 		    <tr>
 		        <th>ID</th>

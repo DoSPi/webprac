@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>Add Client</title>
+        <title>Edit Client</title>
     </head>
     	
     <body>
@@ -32,7 +32,7 @@
                  </tr>
                  <tr>
                      <td colspan="2">
-                        <input type="submit" value="Add" />
+                        <input type="submit" id="add_a" value="Add" />
                      </td>
              </table>
         </form:form>
