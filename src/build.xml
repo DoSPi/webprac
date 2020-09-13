@@ -12,16 +12,25 @@
             <pathelement location = "${testng.classpath}"/>
         </classpath>
     </taskdef>
-    <target name = "runtests">
+    <target name = "runtests-dao">
         <mkdir dir = "${report.dir}"/>
         <testng classpathref="classpath"
             outputDir="${report.dir}"
             haltOnFailure="false" verbose="2">
-            <classfileset dir="${build.dir}/test" includes="*.class" />
+            <classfileset dir="${build.dir}/test" includes="TestDao.class" />
+        </testng>
+    </target>
+    <target name = "runtests-selenium">
+        <mkdir dir = "${report.dir}"/>
+        <testng classpathref="classpath"
+            outputDir="${report.dir}"
+            haltOnFailure="false" verbose="2">
+            <classfileset dir="${build.dir}/test" includes="SystemTest.class" />
         </testng>
     </target>
     <target name="compile">
         <mkdir dir = "${build.dir}"/>
+		<copy file="${src.dir}/hibernate.cfg.xml" tofile="${build.dir}/hibernate.cfg.xml"/>  
         <javac includeantruntime = "false"
             destdir = "${build.dir}"
 			source = "1.8"

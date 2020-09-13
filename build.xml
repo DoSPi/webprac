@@ -13,10 +13,13 @@
 	<delete failonerror="false" dir="${db.name}.war"/>
 	<delete failonerror="false" dir="tmp"/>
   </target>
-	<target name = "runtests" depends="setupdb, compile,deploy">
-		<ant antfile = "${src.dir}/build.xml" target = "runtests"/>	
+	<target name = "runtests-dao" depends="setupdb, compile">
+		<ant antfile = "${src.dir}/build.xml" target = "runtests-dao"/>	
 	</target>
-	<target name = "all" depends="setupdb, deploy">
+		<target name = "runtests-selenium" depends="clean,setupdb, build-war,  start-server, deploy">
+		<ant antfile = "${src.dir}/build.xml" target = "runtests-selenium"/>	
+	</target>
+	<target name = "all" depends="clean,setupdb, start-server,deploy">
 	</target>
 	<target name = "build-war" depends="compile">
 		<ant antfile="${src.dir}/build.xml" target="build-war"/>

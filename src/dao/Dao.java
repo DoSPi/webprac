@@ -37,10 +37,17 @@ public class Dao<T>{
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
+	
 	public List<T> getAll() {
         CriteriaBuilder builder =sessionFactory.getCurrentSession().getCriteriaBuilder();
         CriteriaQuery<T> criteria = builder.createQuery(type);
         criteria.from(type);     
         return sessionFactory.getCurrentSession().createQuery(criteria).getResultList();
     }
+	public SessionFactory getSessionFactory() {
+		return sessionFactory;
+	}
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 }
