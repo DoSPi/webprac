@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="17" passed="17" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-09-13T00:13:39Z" name="Ant suite" finished-at="2020-09-13T00:13:45Z" duration-ms="6530">
+    <groups>
+    </groups>
+    <test started-at="2020-09-13T00:13:39Z" name="Ant test" finished-at="2020-09-13T00:13:45Z" duration-ms="6530">
+      <class name="test.SystemTest">
+        <test-method is-config="true" signature="begin()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:39Z" name="begin" finished-at="2020-09-13T03:13:40Z" duration-ms="785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- begin -->
+        <test-method signature="CloseAccountEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:40Z" name="CloseAccountEx" finished-at="2020-09-13T03:13:40Z" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseAccountEx -->
+        <test-method signature="DeleteClientEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:40Z" name="DeleteClientEx" finished-at="2020-09-13T03:13:40Z" duration-ms="35" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteClientEx -->
+        <test-method signature="DeleteDepartmentEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:40Z" name="DeleteDepartmentEx" finished-at="2020-09-13T03:13:40Z" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteDepartmentEx -->
+        <test-method signature="AddAccount()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:40Z" name="AddAccount" finished-at="2020-09-13T03:13:41Z" duration-ms="1094" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddAccount -->
+        <test-method signature="AddAccountEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:41Z" name="AddAccountEx" finished-at="2020-09-13T03:13:41Z" duration-ms="405" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddAccountEx -->
+        <test-method signature="CloseAccount()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:41Z" name="CloseAccount" finished-at="2020-09-13T03:13:42Z" duration-ms="212" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseAccount -->
+        <test-method signature="AddClient()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:42Z" name="AddClient" finished-at="2020-09-13T03:13:42Z" duration-ms="631" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddClient -->
+        <test-method signature="AddClientEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:42Z" name="AddClientEx" finished-at="2020-09-13T03:13:42Z" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddClientEx -->
+        <test-method signature="AddDepartment()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:42Z" name="AddDepartment" finished-at="2020-09-13T03:13:43Z" duration-ms="518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddDepartment -->
+        <test-method signature="AddDepartmentEx()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:43Z" name="AddDepartmentEx" finished-at="2020-09-13T03:13:43Z" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddDepartmentEx -->
+        <test-method signature="EditClient()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:43Z" name="EditClient" finished-at="2020-09-13T03:13:43Z" duration-ms="390" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditClient -->
+        <test-method signature="EditDepartment()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:43Z" name="EditDepartment" finished-at="2020-09-13T03:13:44Z" duration-ms="318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EditDepartment -->
+        <test-method signature="DeleteClient()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:44Z" name="DeleteClient" finished-at="2020-09-13T03:13:44Z" duration-ms="194" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteClient -->
+        <test-method signature="DeleteDepartment()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:44Z" name="DeleteDepartment" finished-at="2020-09-13T03:13:44Z" duration-ms="202" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DeleteDepartment -->
+        <test-method signature="AddTransaction()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:44Z" name="AddTransaction" finished-at="2020-09-13T03:13:45Z" duration-ms="640" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddTransaction -->
+        <test-method signature="AddTransactionEx1()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:45Z" name="AddTransactionEx1" finished-at="2020-09-13T03:13:45Z" duration-ms="330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddTransactionEx1 -->
+        <test-method signature="AddTransactionEx2()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:45Z" name="AddTransactionEx2" finished-at="2020-09-13T03:13:45Z" duration-ms="278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AddTransactionEx2 -->
+        <test-method is-config="true" signature="end()[pri:0, instance:test.SystemTest@55a561cf]" started-at="2020-09-13T03:13:45Z" name="end" finished-at="2020-09-13T03:13:45Z" duration-ms="66" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- end -->
+      </class> <!-- test.SystemTest -->
+    </test> <!-- Ant test -->
+  </suite> <!-- Ant suite -->
+</testng-results>
